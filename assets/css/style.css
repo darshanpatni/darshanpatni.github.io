@@ -1,0 +1,345 @@
+.line {
+    stroke: steelblue;
+    fill: none;
+    stroke-width: 2;
+}
+
+.line-chart {
+    stroke: steelblue;
+    fill: none;
+    stroke-width: 4;
+}
+.dot {
+    fill: steelblue;
+    stroke: #fff;
+}
+
+.dot-map {
+    stroke-width: 1;   
+}
+
+.dot-selected {
+    fill: red;
+    stroke: #fff;
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: top;
+    overflow: hidden;
+}
+.svg-content-responsive-pumps {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    margin-left: -17%;
+    margin-right: -25%;
+    margin-top: -15%;
+    margin-bottom: -5%;
+    pointer-events:none;
+}
+
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    margin-left: -17%;
+    margin-right: -25%;
+    margin-top: -15%;
+    margin-bottom: -5%;
+}
+
+.circle {
+    fill:red
+}
+.rotated {
+    transform: rotate(-1deg); 
+}
+
+text { 
+    font-family: Arial; 
+    font-size: 15px;
+}
+.axis path, .axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axes {
+    stroke: black;
+    stroke-width: 2;
+}
+
+.tick text {
+    fill: black;
+    font-size: 11px;
+}
+
+/* rect {
+    stroke: white;
+    fill:steelblue;
+} */
+
+.float-container {
+    /* border: 3px solid #fff; */
+    padding: 20px;
+    height: 80%;
+}
+
+.bar-chart-container {
+ padding-left: 20px;
+ padding-right: 20px;
+ padding-bottom: 20px;
+ padding-top: 10px;
+}
+
+.float-child-left {
+    width: 49%;
+    float: left;
+    height: 600px;
+    background: #e2e2e2;
+}
+.float-child-right {
+    width: 50%;
+    float: right;
+    width: 50%;
+    height: 600px;
+    float: right;
+    background: #e2e2e2;
+    /* padding: 20px; */
+    /* border: 2px solid red; */
+}  
+
+.child-float-container {
+    /* border: 3px solid #fff; */
+}
+
+.child-left {
+    width: 80%;
+    float: left;
+    height: 600px;
+    /* padding: 20px; */
+    /* border: 2px solid red; */
+}
+.child-right {
+    width: 20%;
+    float: right;
+    /* padding: 20px; */
+    /* border: 2px solid red; */
+}
+
+.child-float-container-title {
+    position: absolute;
+    width: 47%;
+}
+
+.child-left-title {
+    width: 60%;
+    float: left;
+    /* padding: 20px; */
+    /* border: 2px solid red; */
+}
+.child-right-title {
+    width: 40%;
+    float: right;
+    /* padding: 20px; */
+    /* border: 2px solid red; */
+}
+
+.bar {
+    fill: steelblue;
+}
+
+.male-bar {
+    fill: #d95f02;
+}
+
+.female-bar {
+    fill: #1b9e77;
+}
+
+div.tooltip-chart {
+    position: absolute;
+    width: 80;
+    height: 55;
+    padding: 7px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+div.tooltip-map {
+    position: absolute;
+    width: 80;
+    height: 40;
+    padding: 7px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+div.tooltip-brush {
+    position: absolute;
+    padding: 7px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+body {
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.documentation {
+    width: 100%;
+    text-align: -webkit-center;
+}
+
+div.documentation {
+    text-align: initial;
+    max-width: 1000;
+}
+
+.caption-line-chart {
+    color: black;
+    margin-left: 6%;
+}
+
+.caption-bar-chart {
+    color: black;
+    margin-left: 6%;
+    margin-top: -80%;
+}
+
+svg.line-chart-bg {
+    background-color: e2e2e2;
+}
+
+.legend-dropdown {
+    position: relative;
+    z-index: 9999;
+    width: 100%;
+    height: 30;
+    border-radius: 3px;
+}
+
+.circle-hover {
+    stroke-width: 1;   
+    z-index: 9998;
+}
+
+/* table{
+    border: 1px solid black;
+    border-collapse: collapse;
+  } */
+
+.legend-div {
+    margin-top: 25px;
+    margin-right: 15px;
+    margin-left: 10px;
+}
+
+.legend-table-div {
+    border: 2px solid gray;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.bar-chart-legend {
+    width: 100;
+    width: 100;
+    float: right;
+    margin-top: 10;
+    margin-right: 10;
+    padding: 5;
+}
+
+select {
+    margin-bottom: 10;
+    margin-top: 10;
+}
+
+.map-container-div {
+    width: 95%;
+    height: 87%;
+    background: white;
+    border: 2px solid gray;
+    border-radius: 3px;
+    margin: 20;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    float: right;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color:steelblue;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px steelblue;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .documentation-div {
+      padding: 20;
+  }

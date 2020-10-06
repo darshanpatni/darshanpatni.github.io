@@ -1,0 +1,214 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Golden Square outbreak</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="assets/js/d3.v4.min.js"></script>
+    
+    
+</head>
+<body>
+    <div class="float-container">
+
+        <div class="float-child-left" >
+            
+            <div class="child-float-container">
+                <div class="child-left">
+                    <div class="map-container-div">
+                        <div id="map" class="rotated"> </div>
+                    </div>
+                </div>
+                <div class="child-right">
+                    <div class="legend-div">
+                        Select Legend
+                        <div>
+                            <select class="legend-dropdown" id="legend-selector" onchange="onLegendUpdate()">
+                                <option value = 1>None</option>
+                                <option value = 2>Age</option>
+                                <option value = 3>Sex</option>
+                            </select>
+                        </div>                        
+                    
+                        <div class="legend-table-div">    
+                            <table id="none-legend">
+                                <tr>
+                                <td>
+                                <svg width="30" height="30">
+                                    <circle cx="15" cy="15" r="6" fill="#ff0000" stroke="#4f4f4f" />
+                                </svg>
+                                </td>
+                                <td>Deaths</td>
+                                </tr>
+                            </table>
+
+                            <table id="sex-legend">
+                                <tr>
+                                    <td>
+                                    <svg width="30" height="30">
+                                    <circle cx="15" cy="15" r="6" fill="#d95f02" stroke="#4f4f4f" />
+                                    </svg>
+                                </td>
+                                    <td>Male</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    <svg width="30" height="30">
+                                        <circle cx="15" cy="15" r="6" fill="#1b9e77" stroke="#4f4f4f" />
+                                    </svg>
+                                    </td>
+                                    <td>Female</td>
+                                </tr>
+                            </table>
+
+                            <table id="age-legend">
+                            
+                                <td>
+                                <svg width="30" height="30">
+                                <circle cx="15" cy="15" r="6" fill="#4575b4" stroke="#4f4f4f" />
+                                </svg>
+                            </td>
+                                <td>1 to 10</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <svg width="30" height="30">
+                                    <circle cx="15" cy="15" r="6" fill="#91bfdb" stroke="#4f4f4f" />
+                                </svg>
+                                </td>
+                                <td>11 to 20</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <svg width="30" height="30">
+                                    <circle cx="15" cy="15" r="6" fill="#e0f3f8" stroke="#4f4f4f" />
+                                    </svg>
+                                </td>
+                                <td>21 to 40</td>
+                                </tr>
+                                <tr>
+                                <td>
+                                    <svg width="30" height="30">
+                                    <circle cx="15" cy="15" r="6" fill="#fee090" stroke="#4f4f4f" />
+                                    </svg>
+                                </td>
+                                <td>41 to 60</td>
+                                </tr>
+                                <tr>
+                                <td>
+                                    <svg width="30" height="30">
+                                    <circle cx="15" cy="15" r="6" fill="#fc8d59" stroke="#4f4f4f" />
+                                    </svg>
+                                </td>
+                                <td>61 to 80</td>
+                                </tr>
+                                <tr>
+                                <td>
+                                    <svg width="30" height="30">
+                                    <circle cx="15" cy="15" r="6" fill="#d73027" stroke="#4f4f4f" />
+                                    </svg>
+                                </td>
+                                <td>>80</td>
+                                </tr>
+                            </table>
+                            <table id="pump-legend">
+                                <tr>
+                                <td>
+                                    <svg width="30" height="30">
+                                    <rect x="9" y="7.5" width="12", height="12" fill="#20272F" stroke="#afafaf" />
+                                    </svg>
+                                </td>
+                                <td>Water Pump</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        
+        <div class="float-child-right">
+            <div class="child-float-container child-float-container-title">
+                <div class="child-left-title">
+                    <p class="caption-line-chart">Deaths through the time</p>
+                </div>
+                <div class="child-right-title">
+                    <div class="child-float-container">
+                        <div class="child-left-title">
+                            <p class="caption-line-chart">Date range selector</p>
+                            
+                        </div>
+                        <div class="child-right-title">
+                            <p class="caption-line-chart">
+                                <label class="switch">
+                                    <input type="checkbox" onclick='handleBrushToggle(this);'>
+                                    <span class="slider round"></span>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <svg class="line-chart-bg" id="main" width="100%" height="600">
+                </svg>
+            </div>
+            
+        </div>
+    </div>
+      </div>
+      <div class="float-container bar-chart-container">
+          <div class="float-child-left">
+            <div class="legend-table-div bar-chart-legend">    
+
+            <table id="sex-legend">
+                <tr>
+                    <td>
+                    <svg width="30" height="30">
+                    <rect x="7.5" y="7.5" width="15" height="15" fill="#d95f02" />
+                    </svg>
+                </td>
+                    <td>Male</td>
+                </tr>
+                <tr>
+                    <td>
+                    <svg width="30" height="30">
+                        <rect x="7.5" y="7.5" width="15" height="15" fill="#1b9e77" />
+                    </svg>
+                    </td>
+                    <td>Female</td>
+                </tr>
+            </table>
+            </div>
+              <div>
+                  <svg class="line-chart-bg" id="bar-chart" width="100%" height="500">
+                  </svg>
+              </div>
+              <p class="caption-bar-chart">Distribution of deaths by Age and Sex</p>
+
+          </div>
+          <div class="float-child-right">
+              <div class="documentation-div">
+                <h3 id="firstHeading" class="firstHeading" lang="en">1854 Broad Street cholera outbreak</h3>
+                <p>Interactive version of the map-based visualization by John Snow.&nbsp;</p>
+                <h3><a class="instructure_file_link inline_disabled" href="/documentation.html" target="_blank" rel="noopener noreferrer">Documentation</a></h3>
+                <h3>References</h3>
+                <ul>
+                <li><a href="https://www.tutorialsteacher.com/d3js/axes-in-d3">https://www.tutorialsteacher.com/d3js/axes-in-d3</a></li>
+                <li><a href="https://www.tutorialsteacher.com/d3js/create-bar-chart-using-d3js">https://www.tutorialsteacher.com/d3js/create-bar-chart-using-d3js</a></li>
+                <li><a href="https://colorbrewer2.org/#type=diverging&amp;scheme=PRGn&amp;n=4">https://colorbrewer2.org/#type=diverging&amp;scheme=PRGn&amp;n=4</a><a href="https://bl.ocks.org/d3noob/23e42c8f67210ac6c678db2cd07a747e"></a></li>
+                <li><a href="https://observablehq.com/@bumbeishvili/data-driven-range-sliders">https://observablehq.com/@bumbeishvili/data-driven-range-sliders</a></li>
+                <li><a href="https://bl.ocks.org/d3noob/402dd382a51a4f6eea487f9a35566de0">https://bl.ocks.org/d3noob/402dd382a51a4f6eea487f9a35566de0</a></li>
+                <li><a href="https://keithpblog.org/post/upgrading-d3-from-v3-to-v4/">https://keithpblog.org/post/upgrading-d3-from-v3-to-v4/</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak">https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak</a></li>
+                </ul>
+                <p>By,<br />Darshan Patni<br /><a href="mailto:dpatni@iu.edu" target="_blank" rel="noopener">dpatni@iu.edu</a></p>
+              </div>
+            
+          </div>
+      </div>
+      <script src="app.js"></script>
+      <script src="assets/js/SvgUtility.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Golden Square outbreak - Documentation</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="assets/js/d3.v4.min.js"></script>
+    
+    
+</head>
+<body class="documentation">
+    <div class="documentation">
+<h1>Documentation</h1>
+<h2>Design Process:</h2>
+<p>The following design iterations were made as more data was analyzed.</p>
+<h3>Iteration 1</h3>
+<p><img src="assets/images/iteration-1.jpg" width="640" height="445" /></p>
+<p>The initial idea was to mark deaths on the generated map and plot the number of deaths per day on a line graph. Each data point on the line graph would be represented by a circle, and hovering over the circle would show a tooltip with details of deaths.</p>
+<p>The output of iteration 1:</p>
+<p><img src="assets/images/iteration-1-output.png" width="640" height="268"  /></p>
+<p>&nbsp;</p>
+<h3>Iteration 2:</h3>
+<p><img src="assets/images/iteration-2.jpg" width="640" height="449" /></p>
+<p>Next iteration had a line chart that would show male and female deaths over time. However, such visualization would not produce any new insights.</p>
+<h3>Iteration 3:</h3>
+<p><img src="assets/images/iteration-3.jpg" width="640" height="457" /></p>
+<p>In this sketch, more details were added to the map section. A dropdown that would allow the user to select Legend for displaying points on the map (For example, Sex, and Age).  Two pie chart visualizations were also sketched, one showing the overall percentage of Male and Female deaths and another showing the overall percentage of deaths by age range.  &nbsp;&nbsp;</p>
+<h3>Iteration 4:</h3>
+<p><img src="assets/images/iteration-4.jpg" width="640" height="467" /></p>
+<p>Here the two pie charts were replaced with one stacked bar graph combining three variables: Number of deaths, Sex and Age. The following image shows the stacked bar graph visualization:</p>
+<p><img src="assets/images/stacked-bar-graph.png" width="640" height="542" /></p>
+<h2>Final Design</h2>
+<p><img src="assets/images/final-design.png" alt="J58nMRJJR7.png" width="640" height="513" /></p>
+<p><span>The final design has been divided into four sections:</span></p>
+<ol>
+<li><span>Map</span>
+<ul>
+<li>The map shows the location of all deaths marked by&nbsp;<span style="background-color: #ff0000; color: #ffffff;">this</span> color.&nbsp; The map section also allows users to select legend, i.e., to color code the death marks by Age or Sex. The different age ranges are colored as <span style="background-color: #ff0000;"><span style="background-color: #ffffff;"><span style="background-color: #4575b4; color: #ffffff;">1 to 10</span></span></span><span style="color: #000000;">,&nbsp; <span style="background-color: #91bfdb;">11 to 20</span>, <span style="background-color: #e0f3f8;">21-40</span>, <span style="background-color: #fee090;">41-60</span>, <span style="background-color: #fc8d59;">60-80</span>, and <span style="color: #ffffff;"><span style="background-color: #d73027;">&gt;80</span></span>. These colors were selected because they present a diverging pattern and are color-blind friendly. Colors representing sex are <span style="color: #ffffff;"><span style="background-color: #d95f02;">Male</span>&nbsp;</span>and <span style="background-color: #1b9e77; color: #ffffff;">Female</span>; these colors were selected based on contrast and from a color-blind friendly palette. The markers representing the location of deaths are interactive i.e., when the user hovers over the markers, a tooltip is displayed with Date of the death, Age range, and Sex.</span></li>
+</ul>
+</li>
+<li><span>Line Chart</span>
+<ul>
+<li><span>The line chart shows the number of deaths over time. Hovering or pointing over the circular points representing a particular date will reveal a tooltip that displays the date, number of deaths on a date, number of male and female deaths. Hovering over or clicking these points also filters the marks on the map by date. This section also has a range selector toggle. Turning on this toggle allows the user to drag and draw a rectangle to select the range of dates. On drawing a rectangle, a tooltip displaying the date range, total deaths, total male and female deaths in that range will appear. And the marks in the map will change to represent the data from the selected date range.</span></li>
+</ul>
+</li>
+<li><span>Stacked Bar Graph</span>
+<ul>
+<li><span>The stacked bar represents data for three variables: Number of Deaths, Age range, and Sex. This visualization allows the user to easily perceive the highest and lowest deaths in a particular death range and also the amount of male and female deaths in a specific range of age. The colors used to stack bars are<span style="color: #000000;"> <span style="color: #ffffff;"><span style="background-color: #d95f02;">Male</span>&nbsp;</span>and <span style="background-color: #1b9e77; color: #ffffff;">Female</span></span>; these colors are consistent with the sex legend from the map.</span></li>
+</ul>
+</li>
+<li><span>Documentation &amp; References</span>
+<ul>
+<li><span>This section contains a link to the documentation page and references.</span></li>
+</ul>
+</li>
+</ol>
+<h2><span>Insights</span></h2>
+<p><img src="assets/images/map-insight-1.png" width="640" height="544" /></p>
+<p>The initial insight gained by looking at the map is deaths are concentrated more near the pump in the relative center of the map than the other pumps. Suggesting that something may be amiss with the water.</p>
+<p><img src="assets/images/line-graph-insight-2.png" width="640" height="531" /></p>
+<p>In the above image date range of 30-Aug to 9-Sep shows a sudden increase and decrease in the death toll. This rise and fall can help uncover when the water from the pumps was contaminated the most.</p>
+<p><img src="assets/images/stacked-bar-graph.png" alt="msedge_9k9IsrRpxN-1.png" width="640" height="542" /></p>
+<p>The stacked bar indicates a higher death rate between the ages of 1-10 and above 80. This may be attributed to low immunity in children and elders. Ignoring the age range of 1-10, there seems to be a positive correlation between age and death toll. Further, it shows the death toll of both male and female sex is almost equal.&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+</body>
+</html>
