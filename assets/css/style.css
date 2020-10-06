@@ -176,8 +176,6 @@ div.tooltip-chart {
 
 div.tooltip-map {
     position: absolute;
-    width: 80;
-    height: 40;
     padding: 7px;
     font: 12px sans-serif;
     background: lightsteelblue;

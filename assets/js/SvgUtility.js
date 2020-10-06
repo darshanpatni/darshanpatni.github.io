@@ -174,7 +174,9 @@ function drawBarChart(data, svg, width, height) {
     .attr("y", function(d) { 
         return yScale(d.maleDeaths); })
     .attr("width", xScale.bandwidth())
-    .attr("height", function(d) { return height - yScale(d.maleDeaths); });
+    .attr("height", function(d) { return height - yScale(d.maleDeaths); })
+    .on("mouseover", function(item){return handleMouseOverForBarGraph(this, item.maleDeaths, item.totalDeaths);})
+    .on("mouseout", function(item){return handleMouseOutBarGraph(this, item.maleDeaths, item.totalDeaths)});
 
     svg.selectAll(".female-bar")
     .data(data)
@@ -184,7 +186,9 @@ function drawBarChart(data, svg, width, height) {
     .attr("y", function(d) { 
         return yScale(d.totalDeaths); })
     .attr("width", xScale.bandwidth())
-    .attr("height", function(d) { return height - yScale(d.femaleDeaths); });
+    .attr("height", function(d) { return height - yScale(d.femaleDeaths); })
+    .on("mouseover", function(item){return handleMouseOverForBarGraph(this, item.femaleDeaths, item.totalDeaths);})
+    .on("mouseout", function(item){return handleMouseOutBarGraph(this, item.femaleDeaths, item.totalDeaths)});;
     
     svg.append("g")
     .attr("transform", "translate(0," + height + ")")

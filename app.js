@@ -261,12 +261,42 @@ function handleMouseOverForMap(g,d) {  // Add interactivity
         .style("top", (d3.event.pageY - 28) + "px");
 }
 
-function handleMouseOutForMap(g,d) {
+function handleMouseOutForMap(g,deaths,) {
     // Use D3 to select element, change color back to normal
     d3.select(g)
     .attr("class", ".dot-map")
     .attr("fill",circleColor(d, selectedLegend))
     .attr("r", DEATH_RADIUS);
+    mapTooltip.transition()		
+    .duration(500)		
+    .style("opacity", 0);	
+    // Select text by id and then remove
+    d3.select(g).selectAll("text").remove();  // Remove text location
+}
+
+// Create Event Handlers for mouse
+function handleMouseOverForBarGraph(g,d,totalDeaths) {  // Add interactivity
+    // Use D3 to select element, change color and size
+    d3.select(g)
+    .attr("stroke", "#fff")
+
+    d3.select(g)
+    .append("text")
+    .text(d);
+
+    mapTooltip.transition()		
+        .duration(200)		
+        .style("opacity", .9);		
+    mapTooltip.html(d
+        + " out of "+totalDeaths+"<br/>")	
+        .style("left", (d3.event.pageX + 20) + "px")		
+        .style("top", (d3.event.pageY - 28) + "px");
+}
+
+function handleMouseOutBarGraph(g,d) {
+    // Use D3 to select element, change color back to normal
+    d3.select(g)
+    .attr("stroke","none");
     mapTooltip.transition()		
     .duration(500)		
     .style("opacity", 0);	
