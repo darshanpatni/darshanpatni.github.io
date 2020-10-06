@@ -341,3 +341,8 @@ select {
   .documentation-div {
       padding: 20;
   }
+
+  iframe.video {
+    align-content: center;
+    border: 1px solid;
+  }
