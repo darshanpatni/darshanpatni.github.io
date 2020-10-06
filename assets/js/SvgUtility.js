@@ -232,7 +232,7 @@ function drawBarChart(data, svg, width, height) {
     .attr("x",0 - (height / 2))
     .attr("dy", "1em")
     .style("text-anchor", "middle")
-    .text("Number of Deaths");  
+    .text("Number of Victims");  
 
 
 }
@@ -310,7 +310,7 @@ function drawLineChart(data, svg, width, height) {
     .attr("x",0 - (height / 2))
     .attr("dy", "1em")
     .style("text-anchor", "middle")
-    .text("Number of Deaths");  
+    .text("Number of Victims");  
 
 }
 
