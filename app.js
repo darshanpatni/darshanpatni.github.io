@@ -261,7 +261,7 @@ function handleMouseOverForMap(g,d) {  // Add interactivity
         .style("top", (d3.event.pageY - 28) + "px");
 }
 
-function handleMouseOutForMap(g,deaths,) {
+function handleMouseOutForMap(g,d) {
     // Use D3 to select element, change color back to normal
     d3.select(g)
     .attr("class", ".dot-map")
